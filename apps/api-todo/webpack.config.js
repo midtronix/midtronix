@@ -11,7 +11,12 @@ module.exports = {
       compiler: 'tsc',
       main: './src/main.ts',
       tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
+      assets: [
+        './src/assets',
+        './src/Vagrntfile',
+        './src/package.json',
+        './src/provision'
+      ],
       optimization: false,
       outputHashing: 'none',
     }),

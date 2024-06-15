@@ -1,0 +1,26 @@
+Vagrant.configure("2") do |config|
+    # Box and machine settings
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.hostname = "nodejs-pm2"
+  
+    # Forward port 80 (or your Node.js app's port)
+    config.vm.network "forwarded_port", guest: 80, host: 80
+  
+    # Share current directory to /vagrant on guest
+    config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  
+    # Provisioning script
+    config.vm.provision "shell", path: "provision/setup.sh", env: {    
+        APP_NAME => todo,
+        APP_VERSION => 1,
+        APP_DESCRIPTION => manage todos,
+        GLOBAL_PREFIX => api,
+        SWAGGER_PATH => api-todo,
+        HOST => localhost,
+        PORT => 3000,
+      }
+  
+    # Optional: Set up private network
+    # config.vm.network "private_network", ip: "192.168.33.10"
+  end
+  
