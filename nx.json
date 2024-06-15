@@ -1,4 +1,18 @@
 {
   "extends": "nx/presets/npm.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json"
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
+  "generators": {
+    "@nx/angular:app": {
+      "ssr": false,
+      "routing": true,
+      "standalone": true,
+      "inlineTemplate": true,
+      "inlineStyle": true,
+      "prefix": "mdtrx"
+    }
+  }
 }
