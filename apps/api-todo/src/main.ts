@@ -5,43 +5,45 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-
 import { AppModule } from './app/app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
+import { RequestHandler } from '@nestjs/common/interfaces';
+import { Middlewares } from './main.middleware';
+import { configureSwagger } from './main.swagger';
 
-async function bootstrap() {
+async function bootstrap(middlewares: RequestHandler[]) {
   const app = await NestFactory.create(AppModule);
 
-  const cfg = app.get(ConfigService);
+  const configService = app.get(ConfigService);
 
-  const appName = cfg.getOrThrow('appName');
-  const appVersion = cfg.getOrThrow('appVersion');
-  const appDescription = cfg.getOrThrow('appDescription');
-  const globalPrefix = cfg.getOrThrow('globalPrefix');
-  const host = cfg.getOrThrow('host');
-  const port = cfg.getOrThrow('port');
-  const swaggerPath = cfg.getOrThrow('swaggerPath');
+  const cfg = (key: string) => configService.getOrThrow(key);
 
-  app.setGlobalPrefix(globalPrefix);
+  const APP_NAME = cfg('APP_NAME');
+  const APP_VERSION = cfg('APP_VERSION');
+  const APP_DESCRIPTION = cfg('APP_DESCRIPTION');
+
+  const GLOBAL_PREFIX = cfg('GLOBAL_PREFIX');
+  const HOST = cfg('HOST');
+  const PORT = cfg('PORT');
+
+  configureSwagger(app, {
+    info: {
+      title: APP_NAME,
+      description: APP_DESCRIPTION,
+      version: APP_VERSION,
+    },
+    tags: [APP_NAME, 'API'],
+  });
+
+  app.setGlobalPrefix(GLOBAL_PREFIX);
+  app.use(middlewares);
   app.enableCors({ origin: '*' });
 
-  const docConfig = new DocumentBuilder()
-    .setTitle(appName)
-    .setDescription(appDescription)
-    .setVersion(appVersion)
-    .addTag(appName)
-    .build();
-
-  const document = SwaggerModule.createDocument(app, docConfig);
-
-  SwaggerModule.setup(swaggerPath, app, document);
-
-  await app.listen(port);
+  await app.listen(PORT);
 
   Logger.log(
-    `🚀 Application is running on: http://${host}:${port}/${globalPrefix}`
+    `🚀 Application is running on: http://${HOST}:${PORT}/${GLOBAL_PREFIX}`
   );
 }
 
-bootstrap();
+bootstrap(Middlewares);

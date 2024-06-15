@@ -13,9 +13,8 @@ module.exports = {
       tsConfig: './tsconfig.app.json',
       assets: [
         './src/assets',
-        './src/Vagrntfile',
         './src/package.json',
-        './src/provision'
+        './src/favicon.ico',
       ],
       optimization: false,
       outputHashing: 'none',
