@@ -30,7 +30,9 @@
           "@angular/material/prebuilt-themes/azure-blue.css",
           "apps/client-todo/src/styles.scss"
         ],
-        "scripts": []
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/client-todo/ngsw-config.json"
       },
       "configurations": {
         "production": {
