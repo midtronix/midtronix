@@ -44,6 +44,15 @@ importers:
       '@angular/service-worker':
         specifier: ~18.0.3
         version: 18.0.3(@angular/common@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))
+      '@ngrx/data':
+        specifier: ^18.0.0
+        version: 18.0.0(@angular/common@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/effects@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1))(@ngrx/entity@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngrx/entity':
+        specifier: ^18.0.0
+        version: 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngrx/store':
+        specifier: ^18.0.0
+        version: 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -58,7 +67,7 @@ importers:
         specifier: ~18.0.0
         version: 18.0.4(@angular/compiler-cli@18.0.3(@angular/compiler@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7)))(typescript@5.4.5))(@angular/service-worker@18.0.3(@angular/common@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7)))(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(chokidar@3.6.0)(jest-environment-jsdom@29.7.0)(jest@29.7.0(@types/node@18.16.9)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(typescript@5.4.5)))(stylus@0.59.0)(typescript@5.4.5)
       '@angular-devkit/core':
-        specifier: ~18.0.0
+        specifier: ^18.0.4
         version: 18.0.4(chokidar@3.6.0)
       '@angular-devkit/schematics':
         specifier: ~18.0.0
@@ -81,6 +90,9 @@ importers:
       '@angular/language-service':
         specifier: ~18.0.0
         version: 18.0.3
+      '@ngrx/eslint-plugin':
+        specifier: ^18.0.0
+        version: 18.0.0(@typescript-eslint/utils@8.0.0-alpha.30(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@nx/angular':
         specifier: ^19.3.0
         version: 19.3.0(@angular-devkit/build-angular@18.0.4(@angular/compiler-cli@18.0.3(@angular/compiler@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7)))(typescript@5.4.5))(@angular/service-worker@18.0.3(@angular/common@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7)))(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(chokidar@3.6.0)(jest-environment-jsdom@29.7.0)(jest@29.7.0(@types/node@18.16.9)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(typescript@5.4.5)))(stylus@0.59.0)(typescript@5.4.5))(@angular-devkit/core@18.0.4(chokidar@3.6.0))(@angular-devkit/schematics@18.0.4(chokidar@3.6.0))(@babel/traverse@7.24.7)(@schematics/angular@18.0.4(chokidar@3.6.0))(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.4.5))(@swc/core@1.5.29(@swc/helpers@0.5.11))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.0)(nx@19.3.0(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.11))(@swc/types@0.1.8)(typescript@5.4.5))(@swc/core@1.5.29(@swc/helpers@0.5.11)))(rxjs@7.8.1)(typescript@5.4.5)
@@ -1772,6 +1784,48 @@ packages:
     resolution: {integrity: sha512-wHpNJDPzM6XtZUOB3gW0J6mkFCSJilzCM3XrHI1o0C8vZmFE1snbmkIXNyoi1eV0Nxh1BMymcgz5vIMJgQtTqw==}
     peerDependencies:
       typescript: '>=4.3.5'
+
+  '@ngrx/data@18.0.0':
+    resolution: {integrity: sha512-rmrJjjo35A+AY+35SHNt8zP5LOH7D5DXGZh+aAE9t0M8V0V2NFv+zokaTTk8aLEO1PzIa+/yK2LbpaAEpPT4tQ==}
+    peerDependencies:
+      '@angular/common': ^18.0.0
+      '@angular/core': ^18.0.0
+      '@ngrx/effects': 18.0.0
+      '@ngrx/entity': 18.0.0
+      '@ngrx/store': 18.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+
+  '@ngrx/effects@18.0.0':
+    resolution: {integrity: sha512-njDbltV4XnUO10VaIOoiXF+aCyhVnvg6NTLudG9uhK/+cuv3D10cTZ3pHv7ycjpc40Pp16Sz0SY+daj9HfvdKg==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+      '@ngrx/store': 18.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+
+  '@ngrx/entity@18.0.0':
+    resolution: {integrity: sha512-IzW8+eEfwe9NLhJREv/4lpSp+UftlMmWhu4EknDatlJeHKzDOSGwHnYM0fJEzGljSD8RcO6z/hSWJk/gGbOV7w==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+      '@ngrx/store': 18.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+
+  '@ngrx/eslint-plugin@18.0.0':
+    resolution: {integrity: sha512-o3hQhDU3TuRJUypUrVYSHQua17XWhnf8g8/qPUPRySx0mPCTWhoL+uq3WiPd60nLu4fJDA80qIe/xprILxLA0A==}
+    peerDependencies:
+      '@typescript-eslint/utils': ^7.11.0 || ^8.0.0-alpha.20
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '*'
+
+  '@ngrx/operators@17.0.0-beta.0':
+    resolution: {integrity: sha512-EbO8AONuQ6zo2v/mPyBOi4y0CTAp1x4Z+bx7ZF+Pd8BL5ma53BTCL1TmzaeK5zPUe0yApudLk9/ZbHXPnVox5A==}
+    peerDependencies:
+      rxjs: ^6.5.3 || ^7.4.0
+
+  '@ngrx/store@18.0.0':
+    resolution: {integrity: sha512-U/0cX7cQ7kkQrleNq5PQ1gD84lSI+ox2SIiDNAAxm8li7/S63QuRATFJIkMcVavR8yoa7gZ0WpyEKTlYGxEE2g==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+      rxjs: ^6.5.3 || ^7.5.0
 
   '@ngtools/webpack@18.0.4':
     resolution: {integrity: sha512-eWQkAuHEnLme01Ey4Z0FoG6upJHYhnJfsCTBnyEB2LTfdyBUk+PC0gwPXInK8oltWjFfiMnCwxrUQvQsvPW7Hg==}
@@ -9533,6 +9587,50 @@ snapshots:
       typescript: 5.4.5
     transitivePeerDependencies:
       - chokidar
+
+  '@ngrx/data@18.0.0(@angular/common@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/effects@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1))(@ngrx/entity@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/common': 18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      '@angular/core': 18.0.3(rxjs@7.8.1)(zone.js@0.14.7)
+      '@ngrx/effects': 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngrx/entity': 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)
+      '@ngrx/store': 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.3
+
+  '@ngrx/effects@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.0.3(rxjs@7.8.1)(zone.js@0.14.7)
+      '@ngrx/operators': 17.0.0-beta.0(rxjs@7.8.1)
+      '@ngrx/store': 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.3
+
+  '@ngrx/entity@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.0.3(rxjs@7.8.1)(zone.js@0.14.7)
+      '@ngrx/store': 18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.3
+
+  '@ngrx/eslint-plugin@18.0.0(@typescript-eslint/utils@8.0.0-alpha.30(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
+    dependencies:
+      '@typescript-eslint/utils': 8.0.0-alpha.30(eslint@8.57.0)(typescript@5.4.5)
+      eslint: 8.57.0
+      semver: 7.6.2
+      strip-json-comments: 3.1.1
+      typescript: 5.4.5
+
+  '@ngrx/operators@17.0.0-beta.0(rxjs@7.8.1)':
+    dependencies:
+      rxjs: 7.8.1
+      tslib: 2.6.3
+
+  '@ngrx/store@18.0.0(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/core': 18.0.3(rxjs@7.8.1)(zone.js@0.14.7)
+      rxjs: 7.8.1
+      tslib: 2.6.3
 
   '@ngtools/webpack@18.0.4(@angular/compiler-cli@18.0.3(@angular/compiler@18.0.3(@angular/core@18.0.3(rxjs@7.8.1)(zone.js@0.14.7)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.91.0(@swc/core@1.5.29(@swc/helpers@0.5.11))(esbuild@0.21.3))':
     dependencies:
